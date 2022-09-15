@@ -1,5 +1,5 @@
 #!/bin/bash
 for i in 'seq 1 $1'
 do 
-   exec ./a.out $i &
+   exec ./write $i &
 done
