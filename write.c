@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     fseek(f, X, SEEK_SET);
     fputc('\0', f);
     int c = fclose(f);
-
+    
+    print("hi");
     return 0;
 }
