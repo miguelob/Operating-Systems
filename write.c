@@ -12,6 +12,6 @@ int main(int argc, char *argv[])
     fputc('\0', f);
     int c = fclose(f);
     
-    print("hi");
+    printf("hi");
     return 0;
 }
