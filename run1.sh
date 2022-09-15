@@ -1,5 +1,5 @@
 #!/bin/bash
-for ((i=1;i<=$1;i++)); 
+for i in 'seq 1 $1'
 do 
    exec ./a.out $i &
 done
