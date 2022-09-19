@@ -8,4 +8,4 @@ done
 END=`exec ./time.out`
 DELTA=$((END-START))
 
-echo Time Elapsed $DELTA
+echo Time Elapsed: $DELTA ms.
