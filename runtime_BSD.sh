@@ -1,11 +1,11 @@
 #!/bin/bash
 
-START=`date +%s`
+START=$(exec ./time.out)
 for i in `seq 1 $1`;
 do 
    exec ./a.out $i &
 done
-END=`date +%s`
-DELTA=$((((END-START))/1000000))
+END=$(exec ./time.out)
+DELTA=$((END-START))
 
 echo $START $END $DELTA
