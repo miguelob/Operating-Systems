@@ -1,6 +1,8 @@
 #!/bin/bash
 
-START=$(exec ./time.out)
+#START=$(exec ./time.out)
+exec ./time.out
+START=$?
 echo $START
 for i in `seq 1 $1`;
 do 
