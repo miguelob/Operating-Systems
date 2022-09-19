@@ -12,5 +12,6 @@ rm 9*
 
 git stash
 git pull --rebase
+cc get_time.c -o time.out
 cc write.c
 chmod -R 777 /usr/Operating-Systems
