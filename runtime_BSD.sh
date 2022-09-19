@@ -7,6 +7,7 @@ do
    exec ./a.out $i &
 done
 END=`exec ./time.out`
+echo $END
 DELTA=$((END-START))
 
 echo $START $END $DELTA
