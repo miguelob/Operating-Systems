@@ -1,6 +1,7 @@
 #!/bin/bash
 
 START=`exec ./time.out`
+echo $START
 for i in `seq 1 $1`;
 do 
    exec ./a.out $i &
