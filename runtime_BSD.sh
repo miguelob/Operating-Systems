@@ -5,5 +5,5 @@ do
    exec ./a.out $i &
 done
 END=$`date +%s`
-DELTA=$((($END-$START)/1000000))
+DELTA=$(((END-START)/1000000))
 echo $DELTA
