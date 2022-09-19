@@ -2,7 +2,7 @@
 
 #START=$(exec ./time.out)
 exec ./time.out
-START=$?
+echo $?
 echo $START
 for i in `seq 1 $1`;
 do 
