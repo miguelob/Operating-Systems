@@ -11,3 +11,8 @@ DIFF=($END - $START)
 CONVERT=$1000000;
 ELAPSED=$(echo "$DIFF / $CONVERT" | bc)
 echo "It took $ELAPSED milloseconds to write $1 files"
+
+for i in `seq 1 $1`;
+do
+    rm $i &
+done
