@@ -1,9 +1,10 @@
 #include <stdio.h>
-
 #include <sys/ptrace.h>
-#include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/signal.h>
 #include <unistd.h>
+#include <sys/user.h>
+#include <sys/types.h>
 
 int main()
 {   
@@ -12,16 +13,15 @@ int main()
     child = fork();
     if(child == 0)
     {
-        ptrace(PTRACE_TRACEME, 0, NULL, NULL);
-        char *args[]={"./a.out",NULL};
-        execvp(args[0],args);
+        ptrace(PT_TRACE_ME, 0, NULL, NULL);
+        execl("/bin/ls","ls",NULL);
     }
     else
     {
         wait(NULL);
-        orig_eax = ptrace(PTRACE_PEEKUSER,child, 4 * ORIG_EAX, NULL);
+        orig_eax = ptrace(PT_READ_D,child, 4*orig_eax, NULL);
         printf("The child made a system call %ld\n", orig_eax);
-        ptrace(PTRACE_CONT, child, NULL, NULL);
+        ptrace(PT_CONTINUE, child, NULL, NULL);
     }
     return 0;
 }
