@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/signal.h>
 #include <sys/ptrace.h>
 #include <sys/wait.h>
-#include <sys/signal.h>
 #include <unistd.h>
 #include <sys/user.h>
-#include <sys/types.h>
 
 int main()
 {   
